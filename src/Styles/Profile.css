@@ -1,0 +1,47 @@
+.header-row > h4 {
+  font-weight: 800;
+  font-family: "Kalam", cursive;
+  margin: 0 !important;
+}
+
+.header-row {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  color: #000;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.img-container {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #b692c2;
+}
+
+.profile-container > h4 {
+  font-family: "Kalam", cursive;
+  font-weight: 800;
+  font-size: 28px;
+}
+
+blockquote {
+  max-width: 400px;
+  border-left: 5px solid #673ab7 !important;
+  margin-bottom: 50px;
+  font-family: "Kalam", cursive;
+  font-size: 18px;
+  font-weight: 700;
+}
