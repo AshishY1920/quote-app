@@ -5,6 +5,7 @@ import "../Styles/Profile.css";
 import { useQuery } from "@apollo/client";
 import { GET_ALL_QUOTES } from "../graphqloperations/queries";
 import Loading from "../Components/Loading";
+import Error from "../Components/Error";
 
 const quotes = [
   { createdBy: "Ashish Yadav", quote: "I turn Coffee Into code." },
@@ -16,7 +17,7 @@ const Home = () => {
 
   if (loading) return <Loading height={true} />;
   if (error) {
-    console.log(error.message);
+    return <Error message={error.message} />;
   }
 
   console.log("DATA:", data);

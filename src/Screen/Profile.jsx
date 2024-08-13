@@ -25,11 +25,23 @@ const Profile = () => {
           <h4>Ashish Yadav</h4>
         </div>
 
-        {/* Quotes */}
-        {quotes.map((i, index) => (
-          <Quotes quote={i.quote} key={index} />
-        ))}
-        {/* Quotes */}
+        <div className="quote-form-grid-row">
+          <div>
+            {/* Quotes */}
+            {quotes.map((i, index) => (
+              <Quotes quote={i.quote} key={index} />
+            ))}
+            {/* Quotes */}
+          </div>
+          <div>
+            <form className="create-quote-form">
+              <input type="text" placeholder="Enter Quote..." />
+              <button type="submit" className="btn #673ab7 deep-purple">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </Fragment>
   );

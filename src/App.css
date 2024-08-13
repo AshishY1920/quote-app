@@ -31,3 +31,24 @@ nav ul li a {
   max-width: 200px;
   margin: auto;
 }
+
+.Toastify__toast-body > div:last-child {
+  font-weight: 600 !important;
+  color: #1c1c1c !important;
+  font-family: "Kalam", cursive !important;
+}
+
+.error-container {
+  text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .error-container > img {
+    width: 100%;
+  }
+}
+
+.error-container > h4 {
+  font-family: "Kalam", cursive !important;
+  font-weight: 700;
+}

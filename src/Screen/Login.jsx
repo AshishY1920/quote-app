@@ -1,15 +1,43 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "../Styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../graphqloperations/Mutations";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [SignInUser, { data, loading, error }] = useMutation(LOGIN_USER);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("LOGIN DATA: ", email, password);
+    const userSignIn = {
+      email: email,
+      password: password,
+    };
+    SignInUser({
+      variables: {
+        userSignIn: userSignIn,
+      },
+    });
   };
+
+  useEffect(() => {
+    if (data?.user?.token) {
+      localStorage.setItem("quotes__token", data?.user?.token);
+    }
+  }, [data?.user?.token]);
+
+  useEffect(() => {
+    let isAuthorized = localStorage.getItem("quotes__token");
+    if (isAuthorized) {
+      navigate("/");
+    }
+  }, [navigate]);
+
   return (
     <Fragment>
       <div className="container login-row">
